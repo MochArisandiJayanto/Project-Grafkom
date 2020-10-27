@@ -7,6 +7,6 @@ Repository Projecet Grafika Komputer Pembautan Game
 **Kontributor:**
 =============
 * [MochArisandiJayanto](https://github.com/MochArisandiJayanto) (192410103064)
-* Dwi Puspa Nurrizki	(192410103071)
+* [Dwi Puspa Nurrizki](https://github.com/Puspaocta)	(192410103071)
 * [Hasamuddin Qais](https://github.com/HusamuddinQais)	(192410103072)
 * [Anugerah Sayekti](https://github.com/Anugerah18)	(192410103083)
