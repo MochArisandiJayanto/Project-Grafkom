@@ -2,12 +2,12 @@
 ==================
 Repository Projecet Grafika Komputer Pembautan Game
 
-*Kontributor:*
+**Kontributor:**
 =============
-*Anu
-*Moch Arisandi Jayanto (192410103064)
-*Puspa
-*Qais
+* Anu
+* Moch Arisandi Jayanto (192410103064)
+* Puspa
+* Qais
 
 **Grafika Komputer B**
 ==================
