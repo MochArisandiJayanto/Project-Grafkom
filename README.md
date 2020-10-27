@@ -6,7 +6,7 @@ Repository Projecet Grafika Komputer Pembautan Game
 
 **Kontributor:**
 =============
-* Anu
 * Moch Arisandi Jayanto (192410103064)
-* Puspa
-* Qais
+* Dwi Puspa Nurrizki	(192410103071)
+* Hasamuddin Qais	(192410103072)
+* Anugerah Sayekti	(192410103083)
