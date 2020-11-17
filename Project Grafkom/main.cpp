@@ -2,7 +2,6 @@
 #include <GL/glu.h>
 #include <GL/glut.h> // library grafik dari opengl
 
-
 void displayMe(void){ // yang akan ditampilkan
     glClear(GL_COLOR_BUFFER_BIT); //m membersihkan frame
     glBegin(GL_POLYGON); //awalan Line
@@ -23,14 +22,14 @@ void displayMe(void){ // yang akan ditampilkan
 
 void myKeyboard(unsigned char key, int x, int y){
     if(key=='w' || key=='W'){ //ketika menekan w, maka object akan bergerak vertikal ke atas
-        glTranslatef(0,0.5,0);
+        glTranslatef(0,1,0);
     } else if(key=='s' || key=='S'){ //ketika menekan s, maka object akan bergerak vertikal ke bawah
-        glTranslatef(0,-0.5,0);
+        glTranslatef(0,-1,0);
     }
     if(key=='a' || key=='A'){ //ketika menekan a, maka object akan bergerak horizontal ke kiri
-        glTranslatef(-0.5,0,0);
+        glTranslatef(-1,0,0);
     } else if(key=='d' || key=='D'){ //ketika menekan d, maka object akan bergerak horizontal ke kanan
-        glTranslatef(0.5,0,0);
+        glTranslatef(1,0,0);
     }
 }
 
