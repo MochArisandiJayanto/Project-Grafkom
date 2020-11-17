@@ -2,23 +2,9 @@
 #include <GL/glu.h>
 #include <GL/glut.h> // library grafik dari opengl
 
-void displayMe(void){ // yang akan ditampilkan
-    glClear(GL_COLOR_BUFFER_BIT); //m membersihkan frame
-    glBegin(GL_POLYGON); //awalan Line
-    glColor3b(250,100,0); //kode warna
-    glVertex2f(7, 6); //titik untuk line
-    glVertex2f(7.39, 7.47); //titik untuk line
-    glVertex2f(8, 8);
-    glVertex2f(8.64, 7.4);
-    glVertex2f(9, 6);
-    glVertex2f(11, 5);
-    glVertex2f(8.53, 5);
-    glVertex2f(7.98, 5.49);
-    glVertex2f(7.43, 5.02);
-    glVertex2f(5, 5);
-	glEnd();
-	glutSwapBuffers(); // akhiran dari semua kodingan
-}
+#include "pesawat.h"
+using namespace std;
+
 
 void myKeyboard(unsigned char key, int x, int y){
     if(key=='w' || key=='W'){ //ketika menekan w, maka object akan bergerak vertikal ke atas
@@ -44,10 +30,11 @@ int main(int argc, char** argv){ // atur display
 	glutInitWindowSize(500, 500); // ukuran display
 	glutInitWindowPosition(0, 0); // posisi program
 	glutCreateWindow("Jaya"); // nama window
-	glutDisplayFunc(displayMe); //
+	//glutDisplayFunc(displayMe); //
 	glutTimerFunc(1,timer,0);
 	glutKeyboardFunc(myKeyboard);
 	gluOrtho2D(0, 50, 0, 50); //ukuran sumbu X dan Y
 	glutMainLoop();
+	Pesawat();
 	return 0;
 }
