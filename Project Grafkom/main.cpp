@@ -1,28 +1,65 @@
 #include <GL/gl.h> //Import library yang akan digunakan
 #include <GL/glu.h>
 #include <GL/glut.h> // library grafik dari opengl
-
 #include "pesawat.h"
-using namespace std;
+#include "persegi.h"
 
+Pesawat pesawat;
+Persegi persegi;
 
-void myKeyboard(unsigned char key, int x, int y){
-    if(key=='w' || key=='W'){ //ketika menekan w, maka object akan bergerak vertikal ke atas
-        glTranslatef(0,1,0);
-    } else if(key=='s' || key=='S'){ //ketika menekan s, maka object akan bergerak vertikal ke bawah
-        glTranslatef(0,-1,0);
+float x;
+float y;
+
+void timer(int data)
+{
+    // Jika menekan tombol panah kiri
+    if(GetAsyncKeyState(VK_LEFT)){
+        x-=0.1f;
     }
-    if(key=='a' || key=='A'){ //ketika menekan a, maka object akan bergerak horizontal ke kiri
-        glTranslatef(-1,0,0);
-    } else if(key=='d' || key=='D'){ //ketika menekan d, maka object akan bergerak horizontal ke kanan
-        glTranslatef(1,0,0);
+    // Jika menekan tombol panah kanan
+    else if(GetAsyncKeyState(VK_RIGHT)){
+        x+=0.1f;
     }
-}
 
-void timer(int value){
+    // Jika menekan tombol panah atas
+    if(GetAsyncKeyState(VK_UP)){
+        y+=0.1f;
+        }
+    // Jika menekan tombol panah bawah
+    else if (GetAsyncKeyState(VK_DOWN)){
+        y-=0.1f;
+    }
+
     glutPostRedisplay();
-    glutTimerFunc(1,timer,0);
+	glutTimerFunc(1,timer,0);
 }
+
+
+
+
+void displayMe(void) {
+    glClearColor(1,1,1,1);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glPushMatrix();
+    glTranslatef(x, y, 0);
+    pesawat.drawPesawat();
+    glPopMatrix();
+
+    glFlush();
+    glutSwapBuffers();
+}
+
+void myinit() {
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glMatrixMode(GL_MODELVIEW);
+	glClearColor(1.0, 1.0, 1.0, 1.0); //membersihkan windows
+	glColor3f(0.0, 0.0, 0.0); //spesifikasi warna
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+}
+
 
 int main(int argc, char** argv){ // atur display
 	glutInit(&argc, argv);
@@ -30,11 +67,11 @@ int main(int argc, char** argv){ // atur display
 	glutInitWindowSize(500, 500); // ukuran display
 	glutInitWindowPosition(0, 0); // posisi program
 	glutCreateWindow("Jaya"); // nama window
-	//glutDisplayFunc(displayMe); //
+	glutDisplayFunc(displayMe); //
+	myinit();
 	glutTimerFunc(1,timer,0);
 	glutKeyboardFunc(myKeyboard);
 	gluOrtho2D(0, 50, 0, 50); //ukuran sumbu X dan Y
 	glutMainLoop();
-	Pesawat();
 	return 0;
 }
