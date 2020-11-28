@@ -2,10 +2,8 @@
 #include <GL/glu.h>
 #include <GL/glut.h> // library grafik dari opengl
 #include "pesawat.h"
-#include "persegi.h"
 
 Pesawat pesawat;
-Persegi persegi;
 
 float x;
 float y;
@@ -70,7 +68,6 @@ int main(int argc, char** argv){ // atur display
 	glutDisplayFunc(displayMe); //
 	myinit();
 	glutTimerFunc(1,timer,0);
-	glutKeyboardFunc(myKeyboard);
 	gluOrtho2D(0, 50, 0, 50); //ukuran sumbu X dan Y
 	glutMainLoop();
 	return 0;
