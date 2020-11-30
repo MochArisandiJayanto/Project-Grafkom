@@ -1,10 +1,9 @@
 # depslib dependency file v1.0
-1606549093 source:c:\users\diaja\onedrive\dokumen\github\project-grafkom\project grafkom\main.cpp
+1606727617 source:c:\users\diaja\onedrive\dokumen\github\project-grafkom\project grafkom\main.cpp
 	<GL/gl.h>
 	<GL/glu.h>
 	<GL/glut.h>
 	"pesawat.h"
-	"persegi.h"
 
 1301111164 c:\program files (x86)\codeblocks\mingw\include\gl\gl.h
 
@@ -221,7 +220,7 @@
 1301111156 c:\program files (x86)\codeblocks\mingw\include\oleidl.h
 	<objfwd.h>
 
-1606548493 c:\users\diaja\onedrive\dokumen\github\project-grafkom\project grafkom\pesawat.h
+1606714639 c:\users\diaja\onedrive\dokumen\github\project-grafkom\project grafkom\pesawat.h
 
 1606549118 c:\users\diaja\onedrive\dokumen\github\project-grafkom\project grafkom\persegi.h
 

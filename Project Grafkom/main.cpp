@@ -3,7 +3,9 @@
 #include <GL/glut.h> // library grafik dari opengl
 #include "pesawat.h"
 
+
 Pesawat pesawat;
+
 
 float x;
 float y;
@@ -33,10 +35,8 @@ void timer(int data)
 }
 
 
-
-
 void displayMe(void) {
-    glClearColor(1,1,1,1);
+    glClearColor(0,1,1,1);
     glClear(GL_COLOR_BUFFER_BIT);
 
     glPushMatrix();
@@ -58,17 +58,16 @@ void myinit() {
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
-
 int main(int argc, char** argv){ // atur display
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
-	glutInitWindowSize(500, 500); // ukuran display
-	glutInitWindowPosition(0, 0); // posisi program
+	glutInitWindowSize(900, 600); // ukuran display
+	glutInitWindowPosition(50, 0); // posisi program
 	glutCreateWindow("Jaya"); // nama window
 	glutDisplayFunc(displayMe); //
 	myinit();
 	glutTimerFunc(1,timer,0);
-	gluOrtho2D(0, 50, 0, 50); //ukuran sumbu X dan Y
+	gluOrtho2D(0, 100, 0, 100); //ukuran sumbu X dan Y
 	glutMainLoop();
 	return 0;
 }
