@@ -2,42 +2,79 @@
 #include <GL/glu.h>
 #include <GL/glut.h> // library grafik dari opengl
 #include "pesawat.h"
-
+#include "awan.h"
 
 Pesawat pesawat;
-
+Awan awan;
 
 float x;
 float y;
 
+float grafitasi = 0;
+bool bergeser = true;
+
 void timer(int data)
 {
+    if (bergeser == true){
+        if (grafitasi>=100){
+            bergeser = false;
+        }
+        grafitasi += 0.01;
+    }
+    else if (bergeser == false){
+        if (grafitasi <= 0){
+            bergeser = true;
+        }
+        grafitasi -= 0.01;
+    }
     // Jika menekan tombol panah kiri
     if(GetAsyncKeyState(VK_LEFT)){
-        x-=0.1f;
+        if (x>=-17){
+            x -= 0.1f;
+        }
     }
     // Jika menekan tombol panah kanan
     else if(GetAsyncKeyState(VK_RIGHT)){
-        x+=0.1f;
+        if (x<=71) {
+            x+=0.1f;
+        }
     }
 
     // Jika menekan tombol panah atas
     if(GetAsyncKeyState(VK_UP)){
-        y+=0.1f;
+        if (y<=82) {
+            y+=0.1f;
+            }
         }
     // Jika menekan tombol panah bawah
     else if (GetAsyncKeyState(VK_DOWN)){
-        y-=0.1f;
+        if (y>=0){
+            y-=0.1f;
+        }
     }
 
     glutPostRedisplay();
 	glutTimerFunc(1,timer,0);
 }
 
-
 void displayMe(void) {
     glClearColor(0,1,1,1);
     glClear(GL_COLOR_BUFFER_BIT);
+
+    glPushMatrix();
+    glBegin(GL_POLYGON);
+    glColor3ub(100, 149, 237);
+    glVertex2f(100,0);
+    glVertex2f(0,0);
+    glVertex2f(0,100);
+    glVertex2f(100,100);
+    glEnd();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(grafitasi, 0, 0);
+    awan.drawAwan();
+    glPopMatrix();
 
     glPushMatrix();
     glTranslatef(x, y, 0);
