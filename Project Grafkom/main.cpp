@@ -16,14 +16,8 @@ bool bergeser = true;
 void timer(int data)
 {
     if (bergeser == true){
-        grafitasi -= 0.1;
+        grafitasi -= 0.05;
     }
-    //else if (bergeser == false){
-        //if (grafitasi <= -30){
-            //bergeser = true;
-        //}
-        //grafitasi -= 0.01;
-    //}
     // Jika menekan tombol panah kiri
     if(GetAsyncKeyState(VK_LEFT)){
         if (x>=-17){

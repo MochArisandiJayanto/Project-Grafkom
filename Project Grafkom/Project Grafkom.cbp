@@ -44,6 +44,7 @@
 		</Linker>
 		<Unit filename="awan.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="matahari.h" />
 		<Unit filename="pesawat.h" />
 		<Extensions>
 			<code_completion />
