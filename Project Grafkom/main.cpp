@@ -16,10 +16,7 @@ bool bergeser = true;
 void timer(int data)
 {
     if (bergeser == true){
-        //if (grafitasi>= 100){
-            //bergeser = false;
-        //}
-        grafitasi += 0.01;
+        grafitasi -= 0.1;
     }
     //else if (bergeser == false){
         //if (grafitasi <= -30){
@@ -61,18 +58,18 @@ void displaybox()
 {
     float a = 0;
     float b = 45;
-    float c = 17;
+    float c = 0;
     for (int i = 0; i<=100; i++){
         glPushMatrix();
         glTranslated(a,c,0);
         awan.drawAwan();
         glPopMatrix();
-        a -= b;
+        c += b;
         if (i%2 == 0){
-            c = 35;
+            a = 65;
         }
         else if (i%2 != 0){
-            c = 17;
+            a = -7;
         }
     }
 }
@@ -81,21 +78,23 @@ void displaybox2()
 {
     float a = 0;
     float b = 35;
-    float c = 17;
+    float c = 0;
     for (int i = 0; i<=100; i++){
         glPushMatrix();
         glTranslated(a,c,0);
         awan.drawAwan();
         glPopMatrix();
-        a -= b;
+        c += b;
         if (i%2 == 0){
-            c = -10;
+            a = 45;
         }
         else if (i%2 != 0){
-            c = -32;
+            a = 17;
         }
     }
 }
+
+
 
 void displayMe(void) {
     glClearColor(0,1,1,1);
@@ -112,7 +111,7 @@ void displayMe(void) {
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(grafitasi, 0, 0);
+    glTranslatef(0, grafitasi, 0);
     displaybox();
     displaybox2();
     glPopMatrix();
