@@ -16,17 +16,17 @@ bool bergeser = true;
 void timer(int data)
 {
     if (bergeser == true){
-        if (grafitasi>=100){
-            bergeser = false;
-        }
+        //if (grafitasi>= 100){
+            //bergeser = false;
+        //}
         grafitasi += 0.01;
     }
-    else if (bergeser == false){
-        if (grafitasi <= 0){
-            bergeser = true;
-        }
-        grafitasi -= 0.01;
-    }
+    //else if (bergeser == false){
+        //if (grafitasi <= -30){
+            //bergeser = true;
+        //}
+        //grafitasi -= 0.01;
+    //}
     // Jika menekan tombol panah kiri
     if(GetAsyncKeyState(VK_LEFT)){
         if (x>=-17){
@@ -57,6 +57,46 @@ void timer(int data)
 	glutTimerFunc(1,timer,0);
 }
 
+void displaybox()
+{
+    float a = 0;
+    float b = 45;
+    float c = 17;
+    for (int i = 0; i<=100; i++){
+        glPushMatrix();
+        glTranslated(a,c,0);
+        awan.drawAwan();
+        glPopMatrix();
+        a -= b;
+        if (i%2 == 0){
+            c = 35;
+        }
+        else if (i%2 != 0){
+            c = 17;
+        }
+    }
+}
+
+void displaybox2()
+{
+    float a = 0;
+    float b = 35;
+    float c = 17;
+    for (int i = 0; i<=100; i++){
+        glPushMatrix();
+        glTranslated(a,c,0);
+        awan.drawAwan();
+        glPopMatrix();
+        a -= b;
+        if (i%2 == 0){
+            c = -10;
+        }
+        else if (i%2 != 0){
+            c = -32;
+        }
+    }
+}
+
 void displayMe(void) {
     glClearColor(0,1,1,1);
     glClear(GL_COLOR_BUFFER_BIT);
@@ -73,7 +113,8 @@ void displayMe(void) {
 
     glPushMatrix();
     glTranslatef(grafitasi, 0, 0);
-    awan.drawAwan();
+    displaybox();
+    displaybox2();
     glPopMatrix();
 
     glPushMatrix();

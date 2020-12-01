@@ -151,5 +151,6 @@ class Awan{
             glVertex2f(20.07, 49.35);
             glVertex2f(19.59, 49.36);
             glEnd();
+
         }
 };
