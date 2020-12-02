@@ -151,6 +151,93 @@ class Awan{
             glVertex2f(20.07, 49.35);
             glVertex2f(19.59, 49.36);
             glEnd();
+        }
 
+        void manggilAwan(){
+
+            glPushMatrix();
+            glTranslatef(10, awanMulai[0], 0);
+            drawAwan();
+            glPopMatrix();
+
+            glPushMatrix();
+            glTranslatef(40, awanMulai[1], 0);
+            drawAwan();
+            glPopMatrix();
+
+            glPushMatrix();
+            glTranslatef(10, awanMulai[2], 0);
+            drawAwan();
+            glPopMatrix();
+
+            glPushMatrix();
+            glTranslatef(80, awanMulai[2], 0);
+            drawAwan();
+            glPopMatrix();
+
+            glPushMatrix();
+            glTranslatef(35, awanMulai[3], 0);
+            drawAwan();
+            glPopMatrix();
+
+            glPushMatrix();
+            glTranslatef(65, awanMulai[4], 0);
+            drawAwan();
+            glPopMatrix();
+
+            glPushMatrix();
+            glTranslatef(-10, awanMulai[5], 0);
+            drawAwan();
+            glPopMatrix();
+
+            glPushMatrix();
+            glTranslatef(30, awanMulai[6], 0);
+            drawAwan();
+            glPopMatrix();
+
+            glPushMatrix();
+            glTranslatef(60, awanMulai[7], 0);
+            drawAwan();
+            glPopMatrix();
+
+            glPushMatrix();
+            glTranslatef(90, awanMulai[6], 0);
+            drawAwan();
+            glPopMatrix();
+
+            glPushMatrix();
+            glTranslatef(-20, awanMulai[1], 0);
+            drawAwan();
+            glPopMatrix();
+
+            glPushMatrix();
+            glTranslatef(93, awanMulai[8], 0);
+            drawAwan();
+            glPopMatrix();
+        }
+
+        float awanMulai[9] = {50, 80, 100, 125, 140, 145, 165, 50, 70};
+
+        void moveAwan(){
+            awanMulai[0] -= 0.05;
+            awanMulai[1] -= 0.05;
+            awanMulai[2] -= 0.05;
+            awanMulai[3] -= 0.05;
+            awanMulai[4] -= 0.05;
+            awanMulai[5] -= 0.05;
+            awanMulai[6] -= 0.05;
+            awanMulai[7] -= 0.05;
+            awanMulai[8] -= 0.05;
+
+            for (int i = 0; i <= sizeof(awanMulai); i++){
+                if (awanMulai[i] <= -60){
+                    awanMulai[i] = 80;
+                }
+            }
+
+            //if (awanMulai[0] <= -40){
+                //awanMulai[0] = 30;}
+            //if (awanMulai[1] <= -40){
+                //awanMulai[1] = 40;}
         }
 };

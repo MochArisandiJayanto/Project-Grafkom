@@ -10,14 +10,10 @@ Awan awan;
 float x;
 float y;
 
-float grafitasi = 0;
-bool bergeser = true;
-
 void timer(int data)
 {
-    if (bergeser == true){
-        grafitasi -= 0.05;
-    }
+    awan.moveAwan();
+
     // Jika menekan tombol panah kiri
     if(GetAsyncKeyState(VK_LEFT)){
         if (x>=-17){
@@ -48,47 +44,6 @@ void timer(int data)
 	glutTimerFunc(1,timer,0);
 }
 
-void displaybox()
-{
-    float a = 0;
-    float b = 45;
-    float c = 0;
-    for (int i = 0; i<=100; i++){
-        glPushMatrix();
-        glTranslated(a,c,0);
-        awan.drawAwan();
-        glPopMatrix();
-        c += b;
-        if (i%2 == 0){
-            a = 65;
-        }
-        else if (i%2 != 0){
-            a = -7;
-        }
-    }
-}
-
-void displaybox2()
-{
-    float a = 0;
-    float b = 35;
-    float c = 0;
-    for (int i = 0; i<=100; i++){
-        glPushMatrix();
-        glTranslated(a,c,0);
-        awan.drawAwan();
-        glPopMatrix();
-        c += b;
-        if (i%2 == 0){
-            a = 45;
-        }
-        else if (i%2 != 0){
-            a = 17;
-        }
-    }
-}
-
-
 
 void displayMe(void) {
     glClearColor(0,1,1,1);
@@ -105,9 +60,7 @@ void displayMe(void) {
     glPopMatrix();
 
     glPushMatrix();
-    glTranslatef(0, grafitasi, 0);
-    displaybox();
-    displaybox2();
+    awan.manggilAwan();
     glPopMatrix();
 
     glPushMatrix();
