@@ -3,9 +3,11 @@
 #include <GL/glut.h> // library grafik dari opengl
 #include "pesawat.h"
 #include "awan.h"
+#include "peluru.h"
 
 Pesawat pesawat;
 Awan awan;
+Peluru peluru;
 
 float x;
 float y;
@@ -14,26 +16,27 @@ void timer(int data)
 {
     awan.moveAwan();
 
-    // Jika menekan tombol panah kiri
+    peluru.movePeluru();
+
     if(GetAsyncKeyState(VK_LEFT)){
         if (x>=-17){
             x -= 0.1f;
         }
     }
-    // Jika menekan tombol panah kanan
+    //
     else if(GetAsyncKeyState(VK_RIGHT)){
         if (x<=71) {
             x+=0.1f;
         }
     }
 
-    // Jika menekan tombol panah atas
+    //
     if(GetAsyncKeyState(VK_UP)){
         if (y<=82) {
             y+=0.1f;
-            }
         }
-    // Jika menekan tombol panah bawah
+    }
+    //
     else if (GetAsyncKeyState(VK_DOWN)){
         if (y>=0){
             y-=0.1f;
@@ -43,7 +46,6 @@ void timer(int data)
     glutPostRedisplay();
 	glutTimerFunc(1,timer,0);
 }
-
 
 void displayMe(void) {
     glClearColor(0,1,1,1);
@@ -63,6 +65,13 @@ void displayMe(void) {
     awan.manggilAwan();
     glPopMatrix();
 
+    //glTranslatef(0, peluruY, 0);
+    //peluru.drawPeluru();
+    glPushMatrix();
+    glTranslatef(x,y,0);
+    peluru.manggilPeluru();
+    glPopMatrix();
+
     glPushMatrix();
     glTranslatef(x, y, 0);
     pesawat.drawPesawat();
@@ -77,21 +86,21 @@ void myinit() {
 	glLoadIdentity();
 	glMatrixMode(GL_MODELVIEW);
 	glClearColor(1.0, 1.0, 1.0, 1.0); //membersihkan windows
-	glColor3f(0.0, 0.0, 0.0); //spesifikasi warna
+	glColor3f(0.0, 0.0, 0.0);
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
-int main(int argc, char** argv){ // atur display
+int main(int argc, char** argv){
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
-	glutInitWindowSize(900, 600); // ukuran display
-	glutInitWindowPosition(50, 0); // posisi program
-	glutCreateWindow("Jaya"); // nama window
-	glutDisplayFunc(displayMe); //
+	glutInitWindowSize(900, 600);
+	glutInitWindowPosition(50, 0);
+	glutCreateWindow("Jaya");
+	glutDisplayFunc(displayMe);
 	myinit();
 	glutTimerFunc(1,timer,0);
-	gluOrtho2D(0, 100, 0, 100); //ukuran sumbu X dan Y
+	gluOrtho2D(0, 100, 0, 100);
 	glutMainLoop();
 	return 0;
 }

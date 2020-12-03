@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1606899001 source:c:\users\diaja\onedrive\dokumen\github\project-grafkom\project grafkom\main.cpp
+1607012399 source:c:\users\diaja\onedrive\dokumen\github\project-grafkom\project grafkom\main.cpp
 	<GL/gl.h>
 	<GL/glu.h>
 	<GL/glut.h>
 	"pesawat.h"
 	"awan.h"
+	"peluru.h"
 
 1301111164 c:\program files (x86)\codeblocks\mingw\include\gl\gl.h
 
@@ -221,11 +222,13 @@
 1301111156 c:\program files (x86)\codeblocks\mingw\include\oleidl.h
 	<objfwd.h>
 
-1606714639 c:\users\diaja\onedrive\dokumen\github\project-grafkom\project grafkom\pesawat.h
+1607002511 c:\users\diaja\onedrive\dokumen\github\project-grafkom\project grafkom\pesawat.h
 
 1606549118 c:\users\diaja\onedrive\dokumen\github\project-grafkom\project grafkom\persegi.h
 
-1606901722 c:\users\diaja\onedrive\dokumen\github\project-grafkom\project grafkom\awan.h
+1607003506 c:\users\diaja\onedrive\dokumen\github\project-grafkom\project grafkom\awan.h
 
 1606811819 c:\users\diaja\onedrive\dokumen\github\project-grafkom\project grafkom\matahari.h
+
+1607012512 c:\users\diaja\onedrive\dokumen\github\project-grafkom\project grafkom\peluru.h
 

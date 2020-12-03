@@ -3,8 +3,8 @@ class Pesawat{
         void drawPesawat() {
             glBegin(GL_POLYGON); //ujung pesawat
             glColor3f(0,0,0);
-            glVertex2f(22.9, 17.86); //titik untuk line
-            glVertex2f(22.4, 16.72); //titik untuk line
+            glVertex2f(22.9, 17.86);
+            glVertex2f(22.4, 16.72);
             glVertex2f(22.21, 15.23);
             glVertex2f(22.92, 15.31);
             glVertex2f(23.54, 15.19);
@@ -13,8 +13,8 @@ class Pesawat{
 
             glBegin(GL_POLYGON); //badan tengah
             glColor3f(0.75,0.75,0.75);
-            glVertex2f(22.21, 15.23); //titik untuk line
-            glVertex2f(22.02, 12.79); //titik untuk line
+            glVertex2f(22.21, 15.23);
+            glVertex2f(22.02, 12.79);
             glVertex2f(22.04, 8.77);
             glVertex2f(23.68, 8.75);
             glVertex2f(23.78, 12.88);
@@ -24,8 +24,8 @@ class Pesawat{
 
             glBegin(GL_POLYGON); //badan pinggir kiri
             glColor3f(0,0,0);
-            glVertex2f(22.02, 12.79); //titik untuk line
-            glVertex2f(21.79, 12.02); //titik untuk line
+            glVertex2f(22.02, 12.79);
+            glVertex2f(21.79, 12.02);
             glVertex2f(21.58, 11.64);
             glVertex2f(21.64, 8.75);
             glVertex2f(22.04, 8.77);
@@ -33,8 +33,8 @@ class Pesawat{
 
             glBegin(GL_POLYGON); //badan pinggir kanan
             glColor3f(0,0,0);
-            glVertex2f(23.78, 12.79); //titik untuk line
-            glVertex2f(24, 12); //titik untuk line
+            glVertex2f(23.78, 12.79);
+            glVertex2f(24, 12);
             glVertex2f(24.17, 11.65);
             glVertex2f(24.15, 8.75);
             glVertex2f(23.68, 8.75);
@@ -42,24 +42,24 @@ class Pesawat{
 
             glBegin(GL_POLYGON); //badan sayap kiri atas
             glColor3f(1,0,0);
-            glVertex2f(21.58, 11.64); //titik untuk line
-            glVertex2f(20.3, 10.25); //titik untuk line
+            glVertex2f(21.58, 11.64);
+            glVertex2f(20.3, 10.25);
             glVertex2f(20.3, 9.81);
             glVertex2f(21.61, 10);
             glEnd();
 
             glBegin(GL_POLYGON); //badan sayap kanan atas
             glColor3f(1,0,0);
-            glVertex2f(24.17, 11.64); //titik untuk line
-            glVertex2f(25.47, 10.25); //titik untuk line
+            glVertex2f(24.17, 11.64);
+            glVertex2f(25.47, 10.25);
             glVertex2f(25.47, 9.81);
             glVertex2f(24.16, 10);
             glEnd();
 
             glBegin(GL_POLYGON); //badan bawah
             glColor3f(0.5,0,0);
-            glVertex2f(21.61, 8.77); //titik untuk line
-            glVertex2f(21.59, 5.97); //titik untuk line
+            glVertex2f(21.61, 8.77);
+            glVertex2f(21.59, 5.97);
             glVertex2f(24.16, 5.95);
             glVertex2f(24.15, 8.77);
             glEnd();
