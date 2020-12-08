@@ -4,10 +4,12 @@
 #include "pesawat.h"
 #include "awan.h"
 #include "peluru.h"
+#include "pesawatt.h"
 
 Pesawat pesawat;
 Awan awan;
 Peluru peluru;
+Pesawatt pesawatt;
 
 float x;
 float y;
@@ -70,6 +72,10 @@ void displayMe(void) {
     glPushMatrix();
     glTranslatef(x,y,0);
     peluru.manggilPeluru();
+    glPopMatrix();
+
+    glPushMatrix();
+    pesawatt.drawPesawatt();
     glPopMatrix();
 
     glPushMatrix();
