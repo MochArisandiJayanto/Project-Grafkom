@@ -232,10 +232,13 @@
 
 1607012512 c:\users\diaja\onedrive\dokumen\github\project-grafkom\project grafkom\peluru.h
 
-1607405821 source:c:\users\diaja\onedrive\dokumen\github\project-grafkom\project-grafkom\project grafkom\main.cpp
+1608907267 source:c:\users\diaja\onedrive\dokumen\github\project-grafkom\project-grafkom\project grafkom\main.cpp
 	<GL/gl.h>
 	<GL/glu.h>
 	<GL/glut.h>
+	<ctime>
+	<windows.h>
+	<iostream>
 	"pesawat.h"
 	"awan.h"
 	"peluru.h"
@@ -245,7 +248,7 @@
 
 1607404302 c:\users\diaja\onedrive\dokumen\github\project-grafkom\project-grafkom\project grafkom\awan.h
 
-1607404302 c:\users\diaja\onedrive\dokumen\github\project-grafkom\project-grafkom\project grafkom\peluru.h
+1608907314 c:\users\diaja\onedrive\dokumen\github\project-grafkom\project-grafkom\project grafkom\peluru.h
 
-1607405821 c:\users\diaja\onedrive\dokumen\github\project-grafkom\project-grafkom\project grafkom\pesawatt.h
+1608907314 c:\users\diaja\onedrive\dokumen\github\project-grafkom\project-grafkom\project grafkom\pesawatt.h
 

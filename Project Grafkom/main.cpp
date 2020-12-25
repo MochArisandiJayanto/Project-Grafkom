@@ -1,6 +1,9 @@
 #include <GL/gl.h> //Import library yang akan digunakan
 #include <GL/glu.h>
 #include <GL/glut.h> // library grafik dari opengl
+#include <ctime>
+#include <windows.h>
+#include <iostream>
 #include "pesawat.h"
 #include "awan.h"
 #include "peluru.h"
@@ -13,12 +16,22 @@ Pesawatt pesawatt;
 
 float x;
 float y;
+float ranX = (rand() % 40 + 5);
+float ranY = 120;
+float peluruX;
+float peluruY;
+float ujung = 5;
 
 void timer(int data)
 {
     awan.moveAwan();
 
     peluru.movePeluru();
+
+    if(peluru.peluruMulai[0] == ujung){
+        peluruX = x;
+        peluruY = y;
+    }
 
     if(GetAsyncKeyState(VK_LEFT)){
         if (x>=-17){
@@ -45,6 +58,26 @@ void timer(int data)
         }
     }
 
+        // enemy spawn di posisi berbeda ketika keluar window
+    srand((unsigned) time(0)); //srand supaya tiap pemanggilan random valuenya selalu berubah
+    if (ranY >= -30) {
+        ranY -= 0.03f;
+        //cout << "x1 = " << x1 << endl;
+    } else if (ranY < -30) {
+        ranY = 120;
+        ranX = (rand() % 80);
+        //cout << "ranY = " << ranY;
+    }
+
+    //collision musuh
+    //if(peluru.posisiPelurux[0] < pesawatt.posisiPesawattx[0] + 16 &&
+    //peluru.posisiPelurux[0] + 0.59 > pesawatt.posisiPesawattx[0] &&
+    //peluru.posisiPeluruy[0] < pesawatt.posisiPesawatty[0] + 21.8 &&
+    //peluru.posisiPeluruy[0] + 3.37 > pesawatt.posisiPesawatty[0])
+    //{
+        //pesawatt.posisiPesawattx[0] = peluruX;
+    //}
+
     glutPostRedisplay();
 	glutTimerFunc(1,timer,0);
 }
@@ -67,15 +100,16 @@ void displayMe(void) {
     awan.manggilAwan();
     glPopMatrix();
 
-    //glTranslatef(0, peluruY, 0);
-    //peluru.drawPeluru();
     glPushMatrix();
-    glTranslatef(x,y,0);
-    peluru.manggilPeluru();
+    glTranslatef(ranX,ranY,0);
+    //pesawatt.colPesawatt();
+    pesawatt.drawPesawatt();
     glPopMatrix();
 
     glPushMatrix();
-    pesawatt.drawPesawatt();
+    glTranslatef(peluruX, peluruY, 0);
+    //peluru.colPeluru();
+    peluru.manggilPeluru();
     glPopMatrix();
 
     glPushMatrix();

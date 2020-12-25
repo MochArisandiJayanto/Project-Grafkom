@@ -75,4 +75,18 @@ class Peluru{
                 }
             }
         }
+
+        //float posisiPelurux[2] = {3.2, 3.79};
+        //float posisiPeluruy[2] = {2.21, 5.58};
+
+        //void colPeluru(){
+            //glPushMatrix();
+            //glBegin(GL_POLYGON);
+            //glVertex2f(posisiPelurux[0], posisiPeluruy[0]);
+            //glVertex2f(posisiPelurux[0], posisiPeluruy[1]);
+            //glVertex2f(posisiPelurux[1], posisiPeluruy[1]);
+            //glVertex2f(posisiPelurux[1], posisiPeluruy[0]);
+            //glEnd();
+            //glPopMatrix();
+        //}
 };

@@ -46,6 +46,7 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="peluru.h" />
 		<Unit filename="pesawat.h" />
+		<Unit filename="pesawatt.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
