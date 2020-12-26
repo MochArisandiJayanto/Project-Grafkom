@@ -56,11 +56,13 @@ class Peluru{
 
             glPushMatrix();
             glTranslatef(15, peluruMulai[0], 0);
+            //colPeluru();
             drawPeluru();
             glPopMatrix();
 
             glPushMatrix();
             glTranslatef(24, peluruMulai[0], 0);
+            //colPeluru();
             drawPeluru();
             glPopMatrix();
         }
@@ -69,24 +71,27 @@ class Peluru{
         void movePeluru(){
             peluruMulai[0] += 0.05;
 
-            for (int i = 0; i <= sizeof(peluruMulai); i++){
+            for (int i = 0; i <= sizeof(peluruMulai) && i<=sizeof(posisiPeluruy); i++){
                 if (peluruMulai[i] >= 100){
                     peluruMulai[i] = 5;
+                }
+                if (posisiPeluruy[i] >= 100){
+                    posisiPeluruy[i] = 5;
                 }
             }
         }
 
-        //float posisiPelurux[2] = {3.2, 3.79};
-        //float posisiPeluruy[2] = {2.21, 5.58};
+        float posisiPelurux[2] = {3.2, 3.79};
+        float posisiPeluruy[2] = {2.21, 5.58};
 
-        //void colPeluru(){
-            //glPushMatrix();
-            //glBegin(GL_POLYGON);
-            //glVertex2f(posisiPelurux[0], posisiPeluruy[0]);
-            //glVertex2f(posisiPelurux[0], posisiPeluruy[1]);
-            //glVertex2f(posisiPelurux[1], posisiPeluruy[1]);
-            //glVertex2f(posisiPelurux[1], posisiPeluruy[0]);
-            //glEnd();
-            //glPopMatrix();
-        //}
+        void colPeluru(){
+            glPushMatrix();
+            glBegin(GL_POLYGON);
+            glVertex2f(posisiPelurux[0], posisiPeluruy[0]);
+            glVertex2f(posisiPelurux[0], posisiPeluruy[1]);
+            glVertex2f(posisiPelurux[1], posisiPeluruy[1]);
+            glVertex2f(posisiPelurux[1], posisiPeluruy[0]);
+            glEnd();
+            glPopMatrix();
+        }
 };

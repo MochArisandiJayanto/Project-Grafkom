@@ -4,6 +4,7 @@
 #include <ctime>
 #include <windows.h>
 #include <iostream>
+#include <ostream>
 #include "pesawat.h"
 #include "awan.h"
 #include "peluru.h"
@@ -70,13 +71,15 @@ void timer(int data)
     }
 
     //collision musuh
-    //if(peluru.posisiPelurux[0] < pesawatt.posisiPesawattx[0] + 16 &&
-    //peluru.posisiPelurux[0] + 0.59 > pesawatt.posisiPesawattx[0] &&
-    //peluru.posisiPeluruy[0] < pesawatt.posisiPesawatty[0] + 21.8 &&
-    //peluru.posisiPeluruy[0] + 3.37 > pesawatt.posisiPesawatty[0])
-    //{
-        //pesawatt.posisiPesawattx[0] = peluruX;
-    //}
+    if(
+        ((peluru.posisiPelurux[0] <= pesawatt.posisiPesawattx[0] && peluru.posisiPelurux[0] <= pesawatt.posisiPesawattx[1]) && (peluru.posisiPeluruy[0] <= pesawatt.posisiPesawatty[0] && peluru.posisiPeluruy[0] <= pesawatt.posisiPesawatty[1])) ||
+        ((peluru.posisiPelurux[1] <= pesawatt.posisiPesawattx[0] && peluru.posisiPelurux[1] <= pesawatt.posisiPesawattx[1]) && (peluru.posisiPeluruy[0] <= pesawatt.posisiPesawatty[0] && peluru.posisiPeluruy[0] <= pesawatt.posisiPesawatty[1])) ||
+        ((peluru.posisiPelurux[1] <= pesawatt.posisiPesawattx[0] && peluru.posisiPelurux[1] <= pesawatt.posisiPesawattx[1]) && (peluru.posisiPeluruy[1] <= pesawatt.posisiPesawatty[1] && peluru.posisiPeluruy[1] <= pesawatt.posisiPesawatty[1])) ||
+        ((peluru.posisiPelurux[0] <= pesawatt.posisiPesawattx[0] && peluru.posisiPelurux[0] <= pesawatt.posisiPesawattx[1]) && (peluru.posisiPeluruy[1] <= pesawatt.posisiPesawatty[0] && peluru.posisiPeluruy[1] <= pesawatt.posisiPesawatty[1]))
+    )
+    {
+        std::cout << "Test coll";
+    }
 
     glutPostRedisplay();
 	glutTimerFunc(1,timer,0);
@@ -108,7 +111,6 @@ void displayMe(void) {
 
     glPushMatrix();
     glTranslatef(peluruX, peluruY, 0);
-    //peluru.colPeluru();
     peluru.manggilPeluru();
     glPopMatrix();
 

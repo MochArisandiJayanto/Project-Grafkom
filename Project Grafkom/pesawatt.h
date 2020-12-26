@@ -374,17 +374,17 @@ class Pesawatt{
             glEnd();
         }
 
-        //float posisiPesawattx[2] = {0.5, 16.5};
-        //float posisiPesawatty[2] = {1, 22.8};
+        float posisiPesawattx[2] = {0.5, 16.5};
+        float posisiPesawatty[2] = {1, 22.8};
 
-        //void colPesawatt(){
-            //glPushMatrix();
-            //glBegin(GL_POLYGON);
-            //glVertex2f(posisiPesawattx[0], posisiPesawatty[0]);
-            //glVertex2f(posisiPesawattx[0], posisiPesawatty[1]);
-            //glVertex2f(posisiPesawattx[1], posisiPesawatty[1]);
-            //glVertex2f(posisiPesawattx[1], posisiPesawatty[0]);
-            //glEnd();
-            //glPopMatrix();
-        //}
+        void colPesawatt(){
+            glPushMatrix();
+            glBegin(GL_POLYGON);
+            glVertex2f(posisiPesawattx[0], posisiPesawatty[0]);
+            glVertex2f(posisiPesawattx[0], posisiPesawatty[1]);
+            glVertex2f(posisiPesawattx[1], posisiPesawatty[1]);
+            glVertex2f(posisiPesawattx[1], posisiPesawatty[0]);
+            glEnd();
+            glPopMatrix();
+        }
 };
